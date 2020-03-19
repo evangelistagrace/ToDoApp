@@ -1,3 +1,14 @@
 # Default ignored files
 /workspace.xml
-/node_modules
+node_modules/
+.cache/
+dist/
+coverage/
+.vscode/
+.env
+src/scss/style.css.map
+*.map
+
+/vendor/
+./sendgrid.env
+src/sendgridAPI.php

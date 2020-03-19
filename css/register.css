@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+*, .container {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'PT Sans', sans-serif; }
+
+.btn {
+  font-family: 'PT Sans', sans-serif; }
+
+body {
+  overflow-x: hidden;
+  font-size: 1rem;
+  font-family: 'PT Sans', sans-serif;
+  height: 100vh; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'PT Serif', serif;
+  font-weight: 700;
+  color: rgba(15, 35, 46, 0.6);
+  display: block; }
+
+.container {
+  margin: auto; }
+
+.navbar.navbar-light.navbar-expand-md.navigation-clean-search {
+  margin: 0;
+  padding: 0; }
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1500px; } }
+.navbar-logo {
+  width: 150px; }
+
+.navbar.navbar-light.bg-light.navigation-clean-search {
+  font-size: 20px; }
+
+.navbar.navbar-light.navbar-expand-md.navigation-clean.navbar-footer {
+  bottom: 0; }
+
+.menu-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  list-style-type: none;
+  margin: auto;
+  padding: 0;
+  font-size: 30px; }
+
+.container.container-footer {
+  width: 80%; }
+
+.row.display-column {
+  flex-direction: column; }
+
+.col.display-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+@media (min-width: 768px) {
+  .navigation-clean {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; } }
+.navigation-clean {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem; }
+
+.row {
+  justify-content: center; }
+
+.trolley-logo {
+  border: 4px solid #e75f58;
+  border-radius: 200px;
+  padding: 15px;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px; }
+
+.word-logo {
+  width: 220px; }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 100%; }
+
+.row.display-column.landing {
+  justify-content: center; }
+  .row.display-column.landing .col {
+    margin-bottom: 5px;
+    flex-grow: 0;
+    text-align: center; }
+
+.half-background {
+  width: 100%;
+  height: 20vh;
+  border-bottom: 5px solid #56CC9D;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  margin-bottom: 3rem; }
+  .half-background .title {
+    align-self: center; }
+    .half-background .title h2 {
+      font-family: 'Fredoka One', sans-serif;
+      color: #4fb189; }
+    .half-background .title h4 {
+      font-family: 'Quicksand', sans-serif; }
+
+.logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: -3rem; }
+  .logo-container .trolley-logo {
+    background: white;
+    width: 80px;
+    height: 80px;
+    padding: 8px; }
+
+form {
+  width: 25%; }
+
+/*# sourceMappingURL=register.css.map */
