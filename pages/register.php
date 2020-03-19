@@ -1,3 +1,6 @@
+<?php
+require '../config/register-process.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,24 +31,31 @@
 
     </div>
     <div class="row">
-        <form>
+        <?php if(count($errors)) : ?>
+            <div class="error">
+                <?php foreach($errors as $error): ?>
+                    <div class="alert alert-danger"><?php echo $error ?></div>
+                <?php endforeach ?>
+            </div>
+        <?php endif ?>
+        <form method="POST" action="register.php">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" aria-describedby="emailHelp">
+                <input type="email" class="form-control" aria-describedby="emailHelp" name="email">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Username</label>
-                <input type="text" class="form-control" aria-describedby="emailHelp">
+                <input type="text" class="form-control" aria-describedby="emailHelp" name="username">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control">
+                <input type="password" class="form-control" name="password1">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Confirm Password</label>
-                <input type="password" class="form-control">
+                <input type="password" class="form-control" name="password2">
             </div>
-            <a class="btn btn-block btn-primary" href="dashboard.php">Register</a>
+            <button class="btn btn-block btn-primary" name="register">Register</button>
             <small>Have an account already? <a href="login.php">Login</a></small>
         </form>
         <div>
