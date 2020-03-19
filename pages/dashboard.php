@@ -46,29 +46,18 @@ require '../config/task-process.php';
         <div class="container-title">To-do</div>
         <div class="list-container">
             <ul id="to-do">
-                <li class="list-item important">
-                    <input class="checkbox" type="checkbox">
-                    <div class="pseudo-checkbox"></div>
-                    <div class="task">One</div>
-                    <span class="dateline" value="2019-06-30">Due: 2019-06-30</span>
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-alt"></i>
-                </li>
-                <li class="list-item">
-                    <input class="checkbox" type="checkbox"><div class="pseudo-checkbox"></div>
-                    <div class="task">Two</div>
-                    <span class="dateline">Due: 10/06/19</span>
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-alt"></i>
-                </li>
-                <li class="list-item">
-                    <input class="checkbox" type="checkbox"><div class="pseudo-checkbox"></div>
-                    <div class="task">Three</div>
-                    <span class="dateline">Due: 10/06/19</span>
-                    <i class="fas fa-edit"></i>
-                    <i class="fas fa-trash-alt"></i>
-                </li>
-
+                <?php $query = pg_query("SELECT * FROM items WHERE itemuser = '".$_SESSION['username']."' 
+                ") ?>
+                <?php while($item = pg_fetch_array($query)): ?>
+                    <li class="list-item">
+                        <input class="checkbox" type="checkbox">
+                        <div class="pseudo-checkbox"></div>
+                        <div class="task"><?php echo $item['itemname'] ?></div>
+<!--                        <span class="dateline">Due: 2019-06-30</span>-->
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-alt"></i>
+                    </li>
+                <?php endwhile ?>
             </ul>
         </div>
     </div>
@@ -78,7 +67,7 @@ require '../config/task-process.php';
         <div class="container-title">Completed</div>
         <div class="list-container">
             <ul id="completed">
-                <li>one</li>
+                <li>one<i class="fas fa-times text-danger"></i></li>
                 <li>two</li>
                 <li>three</li>
             </ul>
