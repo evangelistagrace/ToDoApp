@@ -24,10 +24,10 @@ require '../config/task-process.php';
     <div class="navbar-item"><div class="btn-menu"><i class="fas fa-bars"></i></div></div>
     <div class="navbar-item"> <a href="/" class="navbar-brand">Daily-Do</a></div>
     <div class="navbar-item">
-        <form class="search">
-            <input type="search" class="form-control mr-2" placeholder="Search">
-            <button class="btn btn-success" type="submit">Submit</button>
-        </form>
+<!--        <form class="search">-->
+<!--            <input type="search" class="form-control mr-2" placeholder="Search">-->
+<!--            <button class="btn btn-success" type="submit">Submit</button>-->
+<!--        </form>-->
     </div>
 </nav>
 
@@ -35,7 +35,7 @@ require '../config/task-process.php';
 
     <!--progress bar-->
     <div class="row">
-        <div class="progress">
+        <div class="progress" style="height: 20px;">
             <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar"><span class="percentage"></span></div>
         </div>
         <p class="progress-text"><span class="task completed"></span>/<span class="task total"></span> completed</p>
@@ -50,12 +50,12 @@ require '../config/task-process.php';
                 ") ?>
                 <?php while($item = pg_fetch_array($query)): ?>
                     <li class="list-item">
-                        <input class="checkbox" type="checkbox">
-                        <div class="pseudo-checkbox"></div>
-                        <div class="task"><?php echo $item['itemname'] ?></div>
+                        <a href="reminders-process.php?reminder-done=f&reminder-id=<?php echo
+                        $item['itemid']?>"><i class="far fa-square text-info"></i></a>
+                        <div class="task text-primary"><?php echo $item['itemname'] ?></div>
 <!--                        <span class="dateline">Due: 2019-06-30</span>-->
-                        <i class="fas fa-edit"></i>
-                        <i class="fas fa-trash-alt"></i>
+                        <i class="fas fa-pencil-alt text-primary"></i>
+                        <i class="fas fa-times text-danger"></i>
                     </li>
                 <?php endwhile ?>
             </ul>
@@ -67,7 +67,12 @@ require '../config/task-process.php';
         <div class="container-title">Completed</div>
         <div class="list-container">
             <ul id="completed">
-                <li>one<i class="fas fa-times text-danger"></i></li>
+                <li class="list-item">
+                    <a href="reminders-process.php?reminder-done=f&reminder-id=<?php echo
+                    $item['itemid']?>"><i class="fas fa-check-square text-info"></i></a>
+                    <div class="task text-primary"><s>something</s></div>
+                    <i class="fas fa-times text-danger"></i>
+                </li>
                 <li>two</li>
                 <li>three</li>
             </ul>
