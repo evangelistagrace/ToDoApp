@@ -62,4 +62,16 @@ if(isset($_POST['register'])){
     }
 }
 
+if(isset($_POST['add-item'])){
+    $itemname = $_POST['item-name'];
+    $itemstatus = FALSE;
+    $itemdate = $_POST['item-date'];
+    $itemuser = $_SESSION['username'];
+
+    $query = pg_query("INSERT INTO items (itemname, itemdate, itemstatus, itemuser) VALUES ('$itemname', FALSE, '$itemdate', 'evan')");
+
+    header('location: task-process.php');
+
+}
+
 ?>

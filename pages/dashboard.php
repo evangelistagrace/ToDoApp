@@ -1,3 +1,6 @@
+<?php
+require '../config/task-process.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,37 +32,6 @@
 </nav>
 
 <div class="container">
-    <!--pop-up box-->
-    <div class="pop-up">
-        <div class="pop-up-content">
-            <p>
-            <div class="btn-close"><i class="fas fa-times"></i></div>
-            <div class="pop-up-title">Add Task</div>
-            <form id="task-form" class="add-task" action="">
-                <div class="form-row inline">
-                    <input id="task-name" name="task-name" class="form-control" type="text" placeholder="Enter a task...">
-                    <button id="add-task-btn" class="btn btn-info" type="submit">Add</button>
-                </div>
-                <div class="form-row inline">
-                    <div class="form-row block">
-                        <div class="title">Dateline: </div>
-                        <input id="task-dateline" name="task-dateline" class="form-control" type="date">
-                    </div>
-                    <div class="form-row block">
-                        <div class="title">Set reminder: </div>
-                        <label class="switch">
-                            <input id="task-reminder" name="task-reminder" type="checkbox">
-                            <div class="slider"></div>
-                        </label>
-                    </div>
-                </div>
-            </form>
-            </p>
-        </div>
-    </div>
-
-    <!--add task button-->
-    <div class="btn-add-task">+</div>
 
     <!--progress bar-->
     <div class="row">
@@ -110,6 +82,55 @@
                 <li>two</li>
                 <li>three</li>
             </ul>
+        </div>
+    </div>
+
+    <a class="btn btn-danger add-btn" href="#addReminder"><i class="fas fa-plus"></i></a>
+
+    <!-- add reminder -->
+    <div id="addReminder" class="overlay">
+        <div class="popup">
+
+            <div class="content"><a class="close" href="#">x</a>
+                <h3 class="text-center mb-4 mt-4">Add Reminder</h3>
+                <form class="popup-form" action="dashboard.php" method="POST">
+                    <div class="form-group">
+                        <table>
+                            <tr>
+                                <td><label for="expenseTitle">Title</label></td>
+                                <td>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="item-name"
+                                               id="itemName" maxlength="140" placeholder="e.g: Pay
+                                               phone bill...">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="form-group">
+                        <table>
+                            <tr>
+                                <td><label for="itemDate">Due Date</label></td>
+                                <td>
+                                    <div class="input-group">
+                                        <input class="form-control" type="date" name="item-date"
+                                               id="itemDate">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit"
+                                name="add-item">Add reminder</button>
+
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 

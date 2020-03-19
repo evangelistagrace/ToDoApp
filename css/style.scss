@@ -378,3 +378,166 @@ input:checked + .slider:before{
   display:inline;
   white-space: nowrap;
 }
+
+//floating button
+.add-btn {
+  width: 60px;
+  height: 60px;
+  color: white;
+  border-radius: 50px;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+//popup box
+form.popup-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+
+  .form-group {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+
+    label {
+      width: 20%;
+    }
+
+    table {
+      width: 100%;
+
+      tr {
+        width: 100%;
+        display: flex;
+
+        td {
+          display: flex;
+
+          &:nth-child(1) {
+            flex: 1;
+          }
+
+          &:nth-child(2) {
+            justify-content: flex-end;
+            flex: 2;
+
+            .dropdown {
+              width: 100%;
+            }
+
+            .input-group {
+              width: 100%;
+            }
+          }
+        }
+
+      }
+    }
+
+    .dropdown,
+    .input-group {
+      width: 70%;
+      justify-content: space-between;
+
+      input.block {
+        width: 100%;
+      }
+
+      .btn-round {
+        padding: 3px;
+        width: 35px;
+        height: 35px;
+        border-radius: 50px;
+        text-align: center;
+        vertical-align: center;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.377);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2;
+
+  &:target {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .popup {
+    margin: 5% auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 40%;
+    position: relative;
+    transition: all 5s ease-in-out;
+
+    .close {
+      position: absolute;
+      top: -10px;
+      right: 0;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+
+      &:hover {
+        color: rgb(35, 37, 36);
+      }
+    }
+
+    .content {
+      max-height: 30%;
+      overflow: auto;
+      position: relative;
+    }
+
+  }
+}
+
+.selectpicker {
+  option {
+    img {
+      width: 10px;
+    }
+  }
+}
+
+select#groupIcon option[value="icon-1"] {
+  background-image: url("/assets/icons/icon-1.png");
+}
+
+
+
+button.btn-round {
+  padding: 0;
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  text-align: center;
+  vertical-align: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
