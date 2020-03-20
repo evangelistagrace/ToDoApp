@@ -21,15 +21,21 @@ require '../config/task-process.php';
 <body onload="updateProgress()">
 <!--navbar-->
 <nav class="navbar navbar-light bg-light">
-    <div class="navbar-item"><div class="btn-menu"><i class="fas fa-bars"></i></div></div>
-    <div class="navbar-item"> <a href="/" class="navbar-brand">Daily-Do</a></div>
-    <div class="navbar-item">
-<!--        <form class="search">-->
-<!--            <input type="search" class="form-control mr-2" placeholder="Search">-->
-<!--            <button class="btn btn-success" type="submit">Submit</button>-->
-<!--        </form>-->
-    </div>
+    <div class="navbar-item"><i class="fas fa-bars"></i></div>
+    <div class="navbar-item"><a href="/" class="navbar-brand">Daily-Do</a></div>
+    <div class="navbar-item"><i class="fas fa-user"></i></div>
 </nav>
+<!-- popup menu   -->
+<div class="popup-menu" id="popup-menu">
+    <div class="triangle"></div>
+    <div class="menu-container">
+        <ul>
+            <li>Profile</li>
+            <li>Settings</li>
+            <li><a href="../config/task-process.php?logout='true'">Logout</a></li>
+        </ul>
+    </div>
+</div>
 
 <div class="container">
 

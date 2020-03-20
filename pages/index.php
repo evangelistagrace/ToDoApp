@@ -10,7 +10,7 @@
     <a class="navbar-brand" href="#">Daily-Do</a>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-        <li class="nav-link"><a href="../src/login.php">Sign In</a></li>
+        <li class="nav-link"><a href="../pages/login.php">Sign In</a></li>
         </li>
     </ul>
 </nav>

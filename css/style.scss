@@ -19,21 +19,31 @@ body{
   z-index: 99;
   display: flex;
   width: 100%;
+  padding: 10px 70px 10px 50px;
 }
 
 .navbar div{
   flex: 1;
 }
-/*menu button*/
-
-.navbar div:nth-child(1){
-  font-size: 1.3em;
-  margin: 5px;
+.navbar .navbar-item:nth-child(1){
+  text-align: left;
 }
-.navbar div:nth-child(2){
+.navbar .navbar-item:nth-child(2){
   text-align: center;
 }
+.navbar .navbar-item:nth-child(3){
+  text-align: right;
+  i {
+    border: 3px solid grey;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+  }
+}
 
+.navbar .navbar-item i{
+  font-size: 1rem;
+}
 
 .navbar a.navbar-brand{
   font-family: 'Fredoka One', sans-serif;
@@ -42,16 +52,6 @@ body{
   text-align: center;
 }
 
-form.search{
-  display: flex;
-  flex: 1;
-  justify-content: flex-end;
-}
-
-form.search input{
-  width: 50%;
-
-}
 .container{
   display: flex;
   flex-direction: column;
@@ -436,8 +436,6 @@ select#groupIcon option[value="icon-1"] {
   background-image: url("/assets/icons/icon-1.png");
 }
 
-
-
 button.btn-round {
   padding: 0;
   width: 35px;
@@ -447,4 +445,35 @@ button.btn-round {
   vertical-align: center;
   font-size: 1.5rem;
   font-weight: 800;
+}
+
+.popup-menu{
+  position: absolute;
+  background: #eee;
+  border-radius: 10px;
+  right: 35px;
+  padding: 10px 0 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9rem;
+  display: none;
+  .triangle {
+    position: absolute;
+    right: 35px;
+    top: -11px;
+    width: 0;
+    height: 0;
+    border-bottom: 12px solid #eee;
+    border-right: 12px solid transparent ;
+    border-left: 12px solid transparent ;
+    z-index: 999999;
+  }
+  .menu-container ul li{
+    list-style-type: none;
+    text-align: left;
+    padding: 3px 20px;
+    cursor: pointer;
+    &:hover {
+      background: #d6d6d6;
+    }
+  }
 }

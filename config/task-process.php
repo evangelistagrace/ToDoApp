@@ -26,4 +26,9 @@ if(isset($_GET['task-status'])){
     header('location: ../pages/dashboard.php');
 }
 
+if(isset($_GET['logout'])){
+    unset($_SESSION['username']);
+    header('location: ../pages/index.php');
+}
+
 ?>
