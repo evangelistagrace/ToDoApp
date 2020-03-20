@@ -46,12 +46,11 @@ require '../config/task-process.php';
         <div class="container-title">To-do</div>
         <div class="list-container">
             <ul id="to-do">
-                <?php $query = pg_query("SELECT * FROM items WHERE itemuser = '".$_SESSION['username']."' 
-                ") ?>
+                <?php $query = pg_query("SELECT * FROM items WHERE itemuser = '".$_SESSION['username']."' AND itemstatus = FALSE")?>
                 <?php while($item = pg_fetch_array($query)): ?>
                     <li class="list-item">
-                        <a href="reminders-process.php?reminder-done=f&reminder-id=<?php echo
-                        $item['itemid']?>"><i class="far fa-square text-info"></i></a>
+                        <a href="../config/task-process.php?task-status=f&task-id=<?php echo
+                        $item['id']?>"><i class="far fa-square text-info"></i></a>
                         <div class="task text-primary"><?php echo $item['itemname'] ?></div>
 <!--                        <span class="dateline">Due: 2019-06-30</span>-->
                         <i class="fas fa-pencil-alt text-primary"></i>
@@ -67,14 +66,15 @@ require '../config/task-process.php';
         <div class="container-title">Completed</div>
         <div class="list-container">
             <ul id="completed">
-                <li class="list-item">
-                    <a href="reminders-process.php?reminder-done=f&reminder-id=<?php echo
-                    $item['itemid']?>"><i class="fas fa-check-square text-info"></i></a>
-                    <div class="task text-primary"><s>something</s></div>
-                    <i class="fas fa-times text-danger"></i>
-                </li>
-                <li>two</li>
-                <li>three</li>
+                <?php $query = pg_query("SELECT * FROM items WHERE itemuser = '".$_SESSION['username']."' AND itemstatus = TRUE")?>
+                <?php while($item = pg_fetch_array($query)): ?>
+                    <li class="list-item">
+                        <a href="../config/task-process.php?task-status=t&task-id=<?php echo
+                        $item['id']?>"><i class="fas fa-check-square text-info"></i></a>
+                        <div class="task text-primary"><?php echo $item['itemname'] ?></div>
+                        <i class="fas fa-times text-danger"></i>
+                    </li>
+                <?php endwhile ?>
             </ul>
         </div>
     </div>
