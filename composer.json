@@ -6,5 +6,8 @@
             "email": "42605267+evangelistagrace@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "require-dev": {
+        "heroku/heroku-buildpack-php": "*"
+    }
 }
